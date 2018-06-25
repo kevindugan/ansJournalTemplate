@@ -1,86 +1,23 @@
-\documentclass{article}                                                                           %basic LaTeX document type
-
-\usepackage[margin=1.3in]{geometry}                                                     %set size of all margins
-%\usepackage[left=1.3in, top=1in, right=1in, bottom=1in]{geometry}         %can set margin sizes which are not the same in this way
-
-%\linespread{2}                                                                                         %option 1 for making text double-spaced
-\usepackage{setspace}                                                                             %option 2 for making text double-spaced
-\doublespacing                                                                                         %set double space
-
-\usepackage{indentfirst}                                                                          %makes first paragraph of section indented (non-first are by default)
-\setlength{\parindent}{25pt}                                                                     %set size of indentation (15pt is default)
-
-\renewcommand\thesection{\Roman{section}}                                         %set capital Roman numeral section headings
-\renewcommand\thesubsection{\thesection.\Alph{subsection}}                   %set capital Aramaic letters subsection headings
-\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}} %set capital Arabic numbers subsubsection headings
-
-\renewcommand*\thetable{\Roman{table}}                                              %set capital Roman numeral table numeration
-
-\usepackage[explicit]{titlesec}                                                                  %package needed for next lines
-\titleformat{\section}{\bfseries}{\thesection.}{1em}{\MakeUppercase{#1}}  %makes section headings bold and upper case characters
-\titleformat{\subsection}{\bfseries}{\thesubsection.}{1em}{#1}                   %makes subsection headings bold
-\titleformat{\subsubsection}{\itshape}{\thesubsubsection.}{1em}{#1}          %makes subsubsection headings in italics
-
-\usepackage{lastpage}                                                                             %package which returns number of last page (same as number of pages)
-\usepackage[figure,table]{totalcount}                                                        %package which counts the number of tables and/or figures
-
-\usepackage{amsmath}                                                                            %enable `align' equation types
-
-\renewcommand{\thefootnote}{\alph{footnote}}                                        %sets labeling of footnotes
-\usepackage[]{footmisc}                                                                          %enables double spaced footnotes
-  \renewcommand{\footnotelayout}{\doublespacing}                                  %double spacing of footnotes
-
-%%% If you desire to place footnotes at the end of the document, uncomment these four lines and the two related near the end of this file
-%\usepackage{endnotes}                                                                          %enables endnote page
-%  \let\footnote=\endnote                                                                         %sets footnotes to endnotes
-%  \renewcommand*{\theendnote}{\alph{endnote}}                                   %labels endnotes alphabetically
-%  \renewcommand{\notesname}{Footnotes}                                            %renames endnotes title to footnotes
-
-\usepackage{graphicx}                                                                             %enable figures
-\usepackage{multirow}                                                                             %enable `multirow' capability in tables
-
-\usepackage{caption}                                                                              %enables subfigures
-\usepackage[labelformat=simple]{subcaption}                                           %enables subfigure captions 
-\captionsetup[table]{labelsep=newline,name=TABLE}                                 %sets table caption formatting options to meet NSE requirements
-\captionsetup[figure]{name=Fig.,labelsep=period}                                     %sets figure caption options to meet NSE requirements
-\renewcommand*\thesubfigure{(\alph{subfigure})}                                    %enables proper labeling of subfigures
-
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}                               %reference and citation hyperlinking linking
-
-\DeclareMathOperator{\diff}{d}                                                                %can define operators to use in math mode, example in Eq. 2
-\DeclareMathOperator{\erf}{erf}
+\documentclass{nseJournal}
 
 \begin{document}
 
-%Define fields for \maketitle
-
 \title{{\LaTeX} Template for Submissions to \\American Nuclear Society Journals} %title of paper
 
-\author{
-\vspace{20mm}
-\\Aaron J. Olson,$^{\text{a},\ast}$ Mario I. Ortega,$^{\text{a,b}}$ and Eric M. Benner$^\text{c}$ \\[4pt] %list of authors, with corresponding author marked by asterisk
-\textit{$^a$Sandia National Laboratories, Radiation Effects Theory Department}\\[-10pt]       %affiliations of authors
-\textit{P.O. Box 5800, MS1179, Albuquerque, New Mexico 87185} \\[-5pt]
-\textit{$^b$University of California Berkeley, Nuclear Engineering Department} \\ [-10pt]
-\textit{4155 Etcheverry Hall, MC 1730} \\ [-10pt]
-\textit{University of California, Berkeley, Berkeley, CA 94720-1730} \\ [-5pt]
-\textit{$^c$University of New Mexico, Chemical and Biological Engineering Department} \\ [-10pt]
-\textit{MSC01 1120, 1 University of New Mexico, Albuquerque, New Mexico 87131} \\ [-2pt]
-{$^\ast$Email: \href{mailto:aolson@sandia.gov}{aolson@sandia.gov}}}       % email address for correspondence
+\addAuthor{\correspondingAuthor{Aaron J. Olson}}{a}
+\correspondingEmail{aolson@sandia.gov}
+\addAuthor{Mario I. Ortega}{a,b}
+\addAuthor{Eric M. Benner}{c}
 
-\date{                               %instead of returning the date, this repurposes the \maketitle command to print the number of pages, tables, and figures
-\vspace{40mm}
-Number of pages: \pageref*{LastPage} \\
-Number of tables: \totaltables \\
-Number of figures: \totalfigures
-}
+\addAffiliation{a}{Sandia National Laboratories, Radiation Effects Theory Department\\ P.O. Box 5800, MS1179, Albuquerque, New Mexico 87185}
+\addAffiliation{b}{University of California Berkeley, Nuclear Engineering Department\\ 4155 Etcheverry Hall, MC 1730\\ University of California, Berkeley, Berkeley, CA 94720-1730}
+\addAffiliation{c}{University of New Mexico, Chemical and Biological Engineering Department\\ MSC01 1120, 1 University of New Mexico, Albuquerque, New Mexico 87131}
 
-\clearpage\maketitle
-\thispagestyle{empty}
+\addKeyword{ANS journal guidelines}
+\addKeyword{ANS submission template}
+\addKeyword{ANS bibliography style}
 
-
-\pagebreak
-~\vfill
+\titlePage
 
 \begin{abstract}
 Having an appropriate {\LaTeX} template available when writing new papers saves authors time and effort.
@@ -88,14 +25,9 @@ As of the summer of 2017, the American Nuclear Society (ANS) had not had a {\LaT
 While such a template may have existed in one or more forms and enjoyed use in a subset of the nuclear engineering community, asking colleagues did not yield knowledge of such a template.
 We therefore asked the ANS editors if they would be interested in such a template, iterated with them to create one which was in agreement with the journal submission guidelines, and have provided it for the journal community to use.
 Submissions need not strictly adhere to a specific form beyond what is specified in the submission guidelines since ANS will reformat accepted submissions for publication, we expect that this template will speed up the publishing process for researchers working with ANS.
-
-\vspace{1em}\noindent\textbf{Keywords} --- ANS journal guidelines, ANS submission template, ANS bibliography style
 \end{abstract}
 
-\vfill
 
-
-\pagebreak
 \section{Introduction}
 
 The usefulness of a template is increased if examples are given of many things that an author may encounter.
@@ -282,10 +214,6 @@ Template creation supported by the Department of Energy Computational Science Gr
 \pagebreak
 \bibliographystyle{ans_js}                                                                           %custom ANS journal submission template bibliography style
 \bibliography{bibliography}
-
-%%% If you desire to place footnotes at the end of the document, uncomment these two lines and the four related near the beginning of this file
-%\pagebreak
-%\theendnotes
 
 \end{document}
 
