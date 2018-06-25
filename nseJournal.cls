@@ -51,11 +51,10 @@
 \doublespacing                                                              %set double space
 \setlength{\parindent}{25pt}                                                %set size of indentation (15pt is default)
 
-%%% If you desire to place footnotes at the end of the document, uncomment these four lines and the two related near the end of this file
 \iffootnoteAtEnd
-    \let\footnote=\endnote                                                                         %sets footnotes to endnotes
-    \renewcommand*{\theendnote}{\alph{endnote}}                                   %labels endnotes alphabetically
-    \renewcommand{\notesname}{Footnotes}                                            %renames endnotes title to footnotes
+    \let\footnote=\endnote                                                  %sets footnotes to endnotes
+    \renewcommand*{\theendnote}{\alph{endnote}}                             %labels endnotes alphabetically
+    \renewcommand{\notesname}{Footnotes}                                    %renames endnotes title to footnotes
 \fi
 \newcommand\notes{
     \iffootnoteAtEnd

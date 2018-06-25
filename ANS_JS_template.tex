@@ -1,18 +1,27 @@
+% Document template for ANS Journals
+% Options: footnoteAtEnd - Places all footnotes at the end of document
+%               Usage: \documentclass[footnoteAtEnd]{nseJournal}
 \documentclass{nseJournal}
 
 \begin{document}
 
 \title{{\LaTeX} Template for Submissions to \\American Nuclear Society Journals} %title of paper
 
+% Use the \addAuthor macro to add authors in the order they should appear. The second argument corresponds to
+% the affiliation declared below.
+% The corresponding author should be wrapped in \correspondingAuthor
 \addAuthor{\correspondingAuthor{Aaron J. Olson}}{a}
+% The corresponding author's email can be specified using \correspondingEmail
 \correspondingEmail{aolson@sandia.gov}
 \addAuthor{Mario I. Ortega}{a,b}
 \addAuthor{Eric M. Benner}{c}
 
+% Affiliations can be added in the order they should appear. For breaks in addresses, use either \\ or \tabularnewline
 \addAffiliation{a}{Sandia National Laboratories, Radiation Effects Theory Department\\ P.O. Box 5800, MS1179, Albuquerque, New Mexico 87185}
 \addAffiliation{b}{University of California Berkeley, Nuclear Engineering Department\\ 4155 Etcheverry Hall, MC 1730\\ University of California, Berkeley, Berkeley, CA 94720-1730}
 \addAffiliation{c}{University of New Mexico, Chemical and Biological Engineering Department\\ MSC01 1120, 1 University of New Mexico, Albuquerque, New Mexico 87131}
 
+% Add keywords to appear in Abstract in the order they should appear
 \addKeyword{ANS journal guidelines}
 \addKeyword{ANS submission template}
 \addKeyword{ANS bibliography style}
