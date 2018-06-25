@@ -1,7 +1,7 @@
 % Document template for ANS Journals
 % Options: footnoteAtEnd - Places all footnotes at the end of document
-%               Usage: \documentclass[footnoteAtEnd]{nseJournal}
-\documentclass{nseJournal}
+%               Usage: \documentclass[footnoteAtEnd]{style/nseJournal}
+\documentclass{style/nseJournal}
 
 \begin{document}
 
@@ -131,14 +131,14 @@ Submitted figures should be in formats such as \texttt{tiff}, \texttt{eps}, or \
 
 \begin{figure}[t]%[!htbp]
   \centering
-  \includegraphics[trim = 10mm 0mm 15mm 15mm, width=70mm]{AMClosure.PNG}
+  \includegraphics[trim = 10mm 0mm 15mm 15mm, width=70mm]{figures/AMClosure.PNG}
   \caption{Reflection computed using four different methods as a function of effective chord length.}
   \label{fig:AMClosure}
 \end{figure}
 
 \begin{figure}%[!htbp]
   \centering
-  \includegraphics[trim = 10mm 0mm 10mm 0mm, width=140mm]{DonovanFig1.PNG}
+  \includegraphics[trim = 10mm 0mm 10mm 0mm, width=140mm]{figures/DonovanFig1.PNG}
   \caption{Binary stochastic mixture: disks embedded in a matrix; $\Sigma_{a,i}$ is the absorption coefficient of material $i$ (cm$^{-1}$), and $\Sigma_{s,i}$ is the scattering coefficient of material $i$ (cm$^{-1}$).}
   \label{fig:DonovanFig1}
 \end{figure}
@@ -147,26 +147,26 @@ Submitted figures should be in formats such as \texttt{tiff}, \texttt{eps}, or \
   \centering
   \begin{subfigure}[b]{0.475\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{FichtlScalarMean_c0_5.PNG}
+    \includegraphics[width=\textwidth]{figures/FichtlScalarMean_c0_5.PNG}
     \caption{}
     \label{fig:FP:parta}
   \end{subfigure}
   \begin{subfigure}[b]{0.475\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{FichtlScalarDev_c0_5.PNG}
+    \includegraphics[width=\textwidth]{figures/FichtlScalarDev_c0_5.PNG}
     \caption{}
     \label{fig:FP:partb}
   \end{subfigure}
   %
   \begin{subfigure}[b]{0.475\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{FichtlScalarMean_c0_9.PNG}
+    \includegraphics[width=\textwidth]{figures/FichtlScalarMean_c0_9.PNG}
     \caption{}
     \label{fig:FP:partc}
   \end{subfigure}
   \begin{subfigure}[b]{0.475\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{FichtlScalarDev_c0_9.PNG}
+    \includegraphics[width=\textwidth]{figures/FichtlScalarDev_c0_9.PNG}
     \caption{}
     \label{fig:FP:partd}
   \end{subfigure}
@@ -221,7 +221,7 @@ Template creation supported by the Department of Energy Computational Science Gr
 
 
 \pagebreak
-\bibliographystyle{ans_js}                                                                           %custom ANS journal submission template bibliography style
+\bibliographystyle{style/ans_js}                                                                           %custom ANS journal submission template bibliography style
 \bibliography{bibliography}
 
 \end{document}
