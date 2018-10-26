@@ -103,12 +103,17 @@
 \newcommand\titlePage{
     \author{
         \vspace{20mm}
-        \\\showAuthors\\[4pt]
+        \\
+        \begin{minipage}[c]{\textwidth}
+            \centering
+            \showAuthors
+        \end{minipage}
+        \\[4pt]
         \showAffiliations\\
         \showcorrespondingEmail
     }
     \date{
-        \vspace{40mm}
+        \vfill
         \renewcommand{\arraystretch}{0.8}
         \begin{tabular}[t]{rl}
         Number of pages:& \pageref*{LastPage} \\
